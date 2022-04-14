@@ -1,0 +1,1 @@
+SELECT SongName FROM lab4_songs.Songs WHERE danceability < 0.6 AND energy < 0.6;

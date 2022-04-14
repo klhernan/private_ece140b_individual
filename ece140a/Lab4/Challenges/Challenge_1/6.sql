@@ -1,0 +1,1 @@
+SELECT AVG(energy) FROM lab4_songs.Songs WHERE artist = 'Post Malone';

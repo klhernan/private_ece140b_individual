@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <style>
+      table {
+          margin: 0 auto;
+          font-size: large;
+          border: 1px solid black;
+      }
+
+      h1 {
+          text-align: center;
+          color: #006600;
+          font-size: xx-large;
+          font-family: 'Gill Sans', 
+              'Gill Sans MT', ' Calibri', 
+              'Trebuchet MS', 'sans-serif';
+      }
+
+      td {
+          background-color: #E4F5D4;
+          border: 1px solid black;
+      }
+
+      th,
+      td {
+          font-weight: bold;
+          border: 1px solid black;
+          padding: 10px;
+          text-align: center;
+      }
+
+      td {
+          font-weight: lighter;
+      }
+  </style>
+    <title>Lab 6 RaspberryPi</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lab 6 RaspberryPi</h1>
+      
+
+      <div>
+        
+          <label for="cars">Led:
+          <small><input type="button" id="led" value="ON"
+                 onclick="led_switch();"> </small>
+        </label>
+      </div>
+
+
+      <div class="d-flex flex-column w-50">
+        <div class="d-flex mb-2">
+          <label for="cars">Distance:</label>
+          <select class="form-control ml-2" name="distance" id="distance">
+            <option value="None">Select a distance range</option>
+            <option value="0.0-50.0">0-50 cm</option>
+            <option value="51.0-100.0">51-100 cm</option>
+            <option value="101.0-150.0">101-150 cm</option>
+            <option value="151.0-200.0">151-220 cm</option>
+          </select>
+        </div>
+
+        <div class="d-flex mb-2">
+          <label for="xAxis">XRange:</label>
+          <select class="form-control ml-2" name="xAxis" id="xAxis">
+            <option value="None">Select an X-Axis range</option>
+            <option value="0-80">0-80 cm</option>
+            <option value="81-160">81-160 cm</option>
+            <option value="161-255">161-255 cm</option>
+          </select>
+        </div>
+
+        <div class="d-flex mb-2">
+            <label for="yAxis">YRange:</label>
+            <select class="form-control ml-2" name="yAxis" id="yAxis">
+              <option value="None">Select an Y-Axis range</option>
+              <option value="0-80">0-80 cm</option>
+              <option value="81-160">81-160 cm</option>
+              <option value="161-255">161-255 cm</option>
+            </select>
+          </div>
+
+        <button type="button" class="btn btn-primary" onclick="submit_ranges()">
+          Submit Ranges
+        </button>
+      </div>
+
+      <div class="row d-flex flex-column">
+        <div class="d-flex align-items-center">
+          <h2>
+            Seonsor Data:
+          </h2>
+        </div>
+      </div>
+      
+      <!-- <div>
+        <form action="">
+          <input type="button" id="ledlight" value="ON" style="color:blue"
+                 onclick="toggle(this);">
+          </form>
+      </div> -->
+      <div>
+        <p id='showData'></p>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="rest.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

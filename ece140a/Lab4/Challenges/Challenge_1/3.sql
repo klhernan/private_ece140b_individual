@@ -1,0 +1,1 @@
+SELECT COUNT(DISTINCT artist) FROM lab4_songs.Songs;
